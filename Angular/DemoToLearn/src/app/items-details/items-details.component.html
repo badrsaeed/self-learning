@@ -1,0 +1,13 @@
+<p>items-details works!</p>
+this the title from child {{itemsFromChild}}
+<ng-content></ng-content>
+<button (click)="pushEvent()">fire event</button>
+
+
+<ng-template #defaultTemp>
+  <button>
+    Iam the seconed button
+  </button>
+</ng-template>
+<ng-container *ngTemplateOutlet="parentButton? parentButton : defaultTemp"></ng-container>
+

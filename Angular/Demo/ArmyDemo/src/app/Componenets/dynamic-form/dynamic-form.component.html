@@ -1,0 +1,55 @@
+<div class="btn-warning">
+  <form  [formGroup]="schoolForm">
+    <div>
+     <div>
+       School Name:
+       <input type="text" formControlName="schoolName">
+     </div>
+     <div>
+       Students Count:
+       <input type="text" formControlName="studentsCount">
+     </div>
+
+
+
+     <div class="bg-light" *ngIf="getClassRooms().length" formArrayName="classRooms">
+       <ng-container *ngFor="let classRoom of getClassRooms()?.controls;
+        let classRoomIndex=index">
+         <div class="bg-secondery p-2" [formGroupName]="classRoomIndex">
+           <div>
+             Class Room Name:
+             <input type="text" >
+           </div>
+           <div>
+             Student Count:
+             <input type="text" >
+           </div>
+
+
+           <div formArrayName="subjects">
+            <ng-container *ngFor="let subject of getSubjects(classRoomIndex)?.controls; let subjectIndex=index">
+              <div [formGroupName]="subjectIndex">
+                <div>
+                  Subject Name
+                  <input type="text" />
+                </div>
+                <div>
+                  student count
+                  <input type="text" />
+                </div>
+                <div><button type="button" (click)="deleteSubject(subjectIndex)" >Delete Subject</button></div>
+              </div>
+            </ng-container>
+
+           </div>
+           <div>
+             <button (click)="deleteClassRoom(classRoomIndex)" class="btn btn-danger m-2">Delete Class Room</button>
+             <button class="btn btn-primary m-2" (click)="addSubject(classRoomIndex)">Add Subject</button>
+           </div>
+         </div>
+       </ng-container>
+      </div>
+      <button type="button" (click)="addClassRoom()" class="btn btn-success">Add Class Room</button>
+    </div>
+   </form>
+</div>

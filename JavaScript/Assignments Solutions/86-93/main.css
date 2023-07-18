@@ -1,0 +1,23 @@
+form{
+    padding: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+}
+form input, select , div{
+    margin-bottom: 10px;
+    width: 200px;
+}
+form select{
+    border: none;
+    padding: 5px;
+    outline: 2px solid black;
+    background-color: transparent;
+}
+form [name = 'create']{
+    background-color: green;
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+} 

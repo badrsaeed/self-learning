@@ -1,0 +1,67 @@
+/* local storage practice
+*{
+    box-sizing: border-box;
+}
+div{
+    background-color: #EEE;
+    padding: 8px;
+    margin: auto;
+    width: 400px;
+    margin-bottom: 10px;
+}
+ul{
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+li:hover{
+    opacity: 1;
+}
+li{
+    width: 50px;
+    height: 50px;
+    opacity: .4;
+}
+[data-color = "red"]{
+    background-color: red;
+    cursor: pointer;
+}
+[data-color = "green"]{
+    cursor: pointer;
+    background-color: green;
+}
+[data-color = "blue"]{
+    cursor: pointer;
+    background-color: blue;
+}
+[data-color = "grey"]{
+    cursor: pointer;
+    background-color: grey;
+}
+.active{
+    opacity: 1;
+}
+
+
+.main{
+    background-color: red;
+    height: 200px;
+} */
+
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    height: 5000px;
+}
+.scroll{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: red;
+    height: 5px;
+    width: 0;
+}
